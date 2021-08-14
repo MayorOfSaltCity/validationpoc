@@ -1,0 +1,15 @@
+<p>opportunity-form works!</p>
+<form [formGroup]="form">
+    <dl>
+        <dt><label class="form-label" for="name">Name</label></dt>
+        <dd><input name="name" type="number" class="form-control" formControlName="name"></dd>
+        <dt><label class="form-label" for="surname">Surname</label></dt>
+        <dd><input name="surname" type="text" class="form-control" formControlName="surname"></dd>
+    </dl>
+    <input type="submit" [disabled]="!form.valid">
+    <ul>
+        <li>Is my form  valid? {{form.valid}}</li>
+        <li><pre>{{form.controls.name.errors| json}}</pre></li>
+    </ul>
+    
+</form>
