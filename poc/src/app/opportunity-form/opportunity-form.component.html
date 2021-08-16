@@ -2,14 +2,14 @@
 <form [formGroup]="form">
     <dl>
         <dt><label class="form-label" for="name">Name</label></dt>
-        <dd><input name="name" type="text" class="form-control" formControlName="name"><pre *ngIf="!form.valid">Name should be at least {{form.controls.name.errors.requiredValue}} characters long</pre></dd>
+        <dd><input name="name" type="text" class="form-control" formControlName="name"><pre *ngIf="!!form.controls.name.errors">Name should be at least {{form.controls.name.errors.requiredValue}} characters long</pre></dd>
         <dt><label class="form-label" for="surname">Surname</label></dt>
         <dd><input name="surname" type="text" class="form-control" formControlName="surname"></dd>
     </dl>
     <input type="submit" [disabled]="!form.valid">
     <ul>
         <li>Is my form  valid? {{form.valid}}</li>
-        <li>{{form.errors.message | json}}</li>
+        <li *ngIf="!!form.errors">{{form.errors.message | json}}</li>
     </ul>
     
 </form>

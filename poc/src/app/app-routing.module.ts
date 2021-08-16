@@ -4,7 +4,8 @@ import { OpportunityFormComponent } from 'src/app/opportunity-form/opportunity-f
 import { RouterModule } from '@angular/router';
 
 const routes = [
-  { path: 'opportunity', component: OpportunityFormComponent }
+  { path: 'opportunity', component: OpportunityFormComponent },
+  { path: '',   redirectTo: '/opportunity', pathMatch: 'full' }
 ];
 @NgModule({
   declarations: [],
